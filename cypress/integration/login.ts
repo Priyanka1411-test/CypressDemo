@@ -12,11 +12,16 @@ describe('allLoginTest', function () {
     beforeEach(function(){
         
         loginpage.navigate('https://trytestingthis.netlify.app/')
+        
 
     })
     it('login test-valid cred', () => {
 
          loginpage.loginWithValidCredentials('test', 'test')
+         cy.url().should('include', '/login')
+         cy.get('').select('').should('have.value','')
+         cy.contains('').trigger('mouseover')
+         cy.contains('').check().parent().should('have.class','checked')
     })
 
     it('login test-invalid cred', () => {
